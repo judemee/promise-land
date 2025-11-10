@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You!</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="thankyou-page">
+  <section class="thankyou">
+    <h1>🎉 Thank You, {{ name }}!</h1>
+    <p>Your order has been received successfully.</p>
+    <p>We'll contact you soon to confirm your delivery details.</p>
+    <a href="/" class="btn">Back to Home</a>
+  </section>
+
+  <footer>
+    <p>© 2025 OJ Evolve — All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

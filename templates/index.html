@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promise Land</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Promise Land</h1>
+      <p>We are thriven and committed to solutions entirely customized for each user's specific needs, lifestyle, and goals.</p>
+
+      <div class="product-showcase">
+        <div class="product-images">
+          <div class="img-grid">
+            <img src="{{ url_for('static', filename='images/product1.jpg') }}" alt="Product 1" class="clickable">
+            <img src="{{ url_for('static', filename='images/product2.jpg') }}" alt="Product 2" class="clickable">
+            <img src="{{ url_for('static', filename='images/product3.jpg') }}" alt="Product 3" class="clickable">
+            <img src="{{ url_for('static', filename='images/product4.jpg') }}" alt="Product 4" class="clickable">
+          </div>
+        </div>
+
+        <div class="product-info">
+          <p>
+            The critical interface that fits precisely over the residual limb, distributing pressure evenly to prevent skin irritation and discomfort.
+          </p>
+
+          <div class="price-section">
+            <p class="old-price">₦15,000</p>
+            <p class="new-price">₦9,999</p>
+          </div>
+
+          <a href="#order" class="btn">Order Now</a>
+        </div>
+      </div>
+
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>100% Natural</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry..</p>
+      </div>
+      <div class="card">
+        <h3>Better Sleep</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      </div>
+      <div class="card">
+        <h3>Boost Immunity</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <blockquote>“Lorem Ipsum is simply dummy text of the printing and typesetting industry!” — Mary, Lagos</blockquote>
+    <blockquote>“Lorem Ipsum is simply dummy text of the printing and typesetting industry!” — Tunde, Abuja</blockquote>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section id="order" class="order">
+    <h2>Place Your Order</h2>
+    <form method="POST" action="/submit">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <textarea name="address" placeholder="Delivery Address" required></textarea>
+      <button type="submit" class="btn">Submit Order</button>
+    </form>
+  </section>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/2348106640493" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp">
+  </a>
+
+  <!-- IMAGE MODAL -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <footer>
+    <p>© 2025 OJ Evolve — All Rights Reserved.</p>
+  </footer>
+
+  <!-- SCRIPT FOR MODAL -->
+  <script>
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeBtn = document.querySelector('.close');
+
+    document.querySelectorAll('.clickable').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+      });
+    });
+
+    closeBtn.onclick = () => modal.style.display = 'none';
+    modal.onclick = e => {
+      if (e.target === modal) modal.style.display = 'none';
+    };
+  </script>
+</body>
+
+</html>
